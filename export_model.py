@@ -1,12 +1,11 @@
 import torch
 import torchvision.models as models
-import torchvision.transforms as transforms
 import onnx
 import onnxruntime
 import numpy as np
-from PIL import Image
 import os
 import json
+import urllib.request
 
 print("="*50)
 print("loading pre-trained model...")
@@ -126,3 +125,18 @@ print("preprocess info saved to onnx_models/preprocess_info.json")
 print(f"- mean: {info['mean']}")
 print(f"- std: {info['std']}")
 print(f"- input_size: {info['input_size']}")
+
+print("="*50)
+print("download ImageNet class labels")
+print("="*50)
+
+labels_path = "imagenet_classes.txt"
+if not os.path.exists(labels_path):
+    try:
+        url = "https://raw.githubusercontent.com/pytorch/hub/master/imagenet_classes.txt"
+        urllib.request.urlretrieve(url, labels_path)
+        print(f"Downloaded ImageNet class labels to {labels_path}")
+    except Exception as e:
+        print(f"Error occurred while downloading ImageNet class labels: {e}")
+else:
+    print(f"ImageNet class labels already exist at {labels_path}")
