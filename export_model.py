@@ -1,4 +1,5 @@
 import torch
+import torchvision
 import torchvision.models as models
 import onnx
 import onnxruntime
@@ -115,7 +116,10 @@ info = {
     'mean': [0.485, 0.456, 0.406],
     'std': [0.229, 0.224, 0.225],
     'input_size': [224, 224],
-    'num_classes': 1000
+    'num_classes': 1000,
+    'model_name': 'resnet18',
+    'pytorch_version': torch.__version__,
+    'torchvision_version': torchvision.__version__
 }
 
 with open("onnx_models/preprocess_info.json", "w") as f:

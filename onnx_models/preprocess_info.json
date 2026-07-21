@@ -13,5 +13,8 @@
     224,
     224
   ],
-  "num_classes": 1000
+  "num_classes": 1000,
+  "model_name": "resnet18",
+  "pytorch_version": "2.8.0",
+  "torchvision_version": "0.23.0"
 }
