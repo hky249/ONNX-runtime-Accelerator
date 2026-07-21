@@ -4,6 +4,7 @@ import json
 from PIL import Image
 import torchvision.transforms as transforms
 import os
+import urllib.request
 
 print("="*50)
 print("test real image: test_image.jpg with ONNX model")
