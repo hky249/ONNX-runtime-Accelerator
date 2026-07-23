@@ -1,0 +1,43 @@
+# Build folders
+build/
+cmake-build-*/
+*.o
+*.obj
+*.dylib
+*.exe
+*.so
+*.dll
+*.a
+*.lib
+
+# IDE specific
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+#test images
+test_image.jpg
+
+#models
+onnx_models/
+*.onnx
+*.pb
+
+# Python specific
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+#logs and temporary files
+*.log
+*.tmp
+*.temp
+*.cache
